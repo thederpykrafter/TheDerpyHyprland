@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-set -v
+[[ "$*" == "-v" ]] && set -v
 
 SRC_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
 #################
@@ -69,19 +69,29 @@ _noautostart blueman nm-applet
 ## Etc Configs
 ETC_CFGS=$(fd "" $SRC_DIR/etc -H --max-depth=1)
 for CFG in $ETC_CFGS; do
-  sudo ln -sf $CFG /etc/$(echo $CFG | sed 's/.*etc\///')
+  sudo cp $CFG /etc/$(echo $CFG | sed 's/.*etc\///')
 done
 
 ## Dot Config
 CFGS=$(fd "" $SRC_DIR/.config -H --max-depth=1)
 for CFG in $CFGS; do
-  ln -sf $CFG /home/$USER/$(echo $CFG | sed 's/.*dotfiles\///')
+  DEST=$(echo $CFG | sed 's/.*dotfiles\///')
+  if [[ ! -L ~/$(echo $DEST | sed 's/\/$//') ]]; then
+    [[ ! -d ~/.config/.bak ]] && mkdir ~/.config/.bak
+    mv ~/$DEST ~/.config/.bak/
+    ln -sf $CFG ~/.config/
+  fi
 done
 
 ## Home Configs
 HOME_CFGS=$(fd "" $SRC_DIR/home_config -H --max-depth=1)
 for CFG in $HOME_CFGS; do
-  ln -sf $CFG /home/$USER/$(echo $CFG | sed 's/.*home_config\///')
+  DEST=$(echo $CFG | sed 's/.*home_config\///')
+  if [[ ! -L ~/$(echo $DEST | sed 's/\/$//') ]]; then
+    [[ ! -d ~/.config/.bak ]] && mkdir ~/.config/.bak
+    mv ~/$DEST ~/.config/.bak/
+    ln -sf $CFG ~/
+  fi
 done
 
 ################
@@ -145,7 +155,7 @@ if grep "localhost" ~/.wakatime.cfg &> /dev/null; then
 fi
 
 ## Firefox UI Fix
-FF_PROFILE=$(fd "default-release$" .mozilla/firefox)
+FF_PROFILE=$(fd "default-release$" ~/.mozilla/firefox)
 if [[ ! -f $FF_PROFILE/user.js ]]; then
   bash -c "$(curl -fsSL https://raw.githubusercontent.com/black7375/Firefox-UI-Fix/master/install.sh)"
   if [[ ! $(grep "switchByScrolling" $FF_PROFILE/user.js) ]]; then
