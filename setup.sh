@@ -1,5 +1,7 @@
 #!/usr/bin/bash
 
+set -v
+
 SRC_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
 #################
 ### FUNCTIONS ###
@@ -35,13 +37,13 @@ _noautostart() {
 
 _sys_enable() {
   for SERVICE in $*; do
-    if ! sudo systemctl status $1 | grep "enabled;" &> /dev/null; then
-      sudo systemctl enable $1
+    if ! sudo systemctl status $SERVICE | grep "enabled;" &> /dev/null; then
+      sudo systemctl enable $SERVICE
     fi
-    if sudo systemctl status $1 | grep "inactive" &> /dev/null; then
-      sudo systemctl start $1
+    if sudo systemctl status $SERVICE | grep "inactive" &> /dev/null; then
+      sudo systemctl start $SERVICE
     fi
-    echo "System: Enabled $1"
+    echo "System: Enabled $SERVICE"
   done
 }
 
@@ -67,7 +69,7 @@ _noautostart blueman nm-applet
 ## Etc Configs
 ETC_CFGS=$(fd "" $SRC_DIR/etc -H --max-depth=1)
 for CFG in $ETC_CFGS; do
-  sudo ln -sf $CFG /$CFG
+  sudo ln -sf $CFG /etc/$(echo $CFG | sed 's/.*etc\///')
 done
 
 ## Dot Config
@@ -82,9 +84,64 @@ for CFG in $HOME_CFGS; do
   ln -sf $CFG /home/$USER/$(echo $CFG | sed 's/.*home_config\///')
 done
 
-if [[ ! $(grep "api_key = waka_") ]]; then
-  read -p "Enter Wakatime API Key: " WAKA_API_KEY
-  sed "s/api_key = .*/api_key = /$WAKA_API_KEY/"
+################
+### WAKATIME ###
+################
+
+[[ -v $ZSH_CUSTOM ]] && ZSH_CUSTOM=$HOME/.config/zsh/
+
+if ! grep "api_key = waka_" ~/.wakatime.cfg &> /dev/null; then
+  # get wakatime api key
+  read -p "Enter wakatime api key: " apikey
+
+  # write to config file
+  tee ~/.wakatime.cfg > /dev/null << EOF
+[settings]
+api_key = $apikey
+hostname = $HOSTNAME
+debug = false
+hidefilenames = false
+ignore =
+    ^COMMIT_EDITMSG$
+    ^TAG_EDITMSG$
+    ^/var/(?!www/).*
+    ^/etc/
+    ^$HOME/.local/
+    /tpm/
+    *.log
+    *.bak
+
+[projectmap]
+.shortcuts/ = termux.shortcuts
+^$HOME/.shortcuts/(\d+)/ = project{0}
+
+[projectmap]
+.config/i3/ = endeavour-i3
+^$HOME/.config/i3/(\d+)/ = project{0}
+
+[projectmap]
+.config/nvim/ = derpy.nvim
+^$HOME/.config/nvim/(\d+)/ = project{0}
+
+[projectmap]
+.config/zsh/ = zsh
+^$ZSH_CUSTOM/(\d+)/ = project{0}
+
+[git_submodule_projectmap]
+.config/zsh/themes = cryptic.zsh-theme
+^$ZSH_CUSTOM/themes(\d+)/ = project{0}"
+EOF
+fi
+
+# check for issues
+if ! grep "api_key = waka_" ~/.wakatime.cfg &> /dev/null; then
+  echo -e "\e[93mPlease run again and add wakatime api key!!!!\e[m"
+  exit 1
+fi
+
+if grep "localhost" ~/.wakatime.cfg &> /dev/null; then
+  echo -e "\e[93mHostname not set properly!!!!\e[m"
+  exit 1
 fi
 
 ## Firefox UI Fix
