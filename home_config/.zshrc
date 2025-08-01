@@ -1,0 +1,1 @@
+/home/thederpykrafter/.config/zsh/.zshrc

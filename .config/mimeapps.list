@@ -1,0 +1,11 @@
+[Default Applications]
+inode/directory=thunar.desktop
+application/zip=xarchiver.desktop
+text/html=nvim.desktop
+
+[Added Associations]
+application/zip=xarchiver.desktop;
+text/plain=nvim.desktop;
+text/html=nvim.desktop;
+image/jpeg=gimp.desktop;
+image/png=gimp.desktop;

@@ -1,0 +1,45 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_file = lf
+insert_final_newline = true
+
+[*.{sh,bash,bashrc,profile,zsh,zshrc}]
+# like -i=4
+indent_style = space
+indent_size = 2
+# --language-variant
+shell_variant      = bash
+binary_next_line   = true
+# --case-indent
+switch_case_indent = true
+space_redirects    = true
+keep_padding       = false
+# --func-next-line
+function_next_line = false
+
+[Makefile]
+indent_style = tab
+[*.{rs,toml}]
+indent_style = space
+indent_size = 4
+
+[*.lua]
+indent_style = space
+indent_size = 2
+
+[*.{md,markdown}]
+indent_style = space
+indent_size = 2
+
+[*.{yaml,yml}]
+indent_style = space
+indent_size = 2
+
+# ignore directories
+[*/third_party/**]
+ignore = true
+
+[*/zsh/plugins/**]
+ignore = true

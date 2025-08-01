@@ -1,0 +1,3 @@
+[submodule "cryptic.zsh-theme"]
+	path = themes
+	url = https://github.com/thederpykrafter/cryptic.zsh-theme

@@ -1,0 +1,243 @@
+//  __  __           _       _
+// |  \/  | ___   __| |_   _| | ___  ___
+// | |\/| |/ _ \ / _` | | | | |/ _ \/ __|
+// | |  | | (_) | (_| | |_| | |  __/\__ \
+// |_|  |_|\___/ \__,_|\__,_|_|\___||___/
+//
+//
+// by Stephan Raabe (2023)
+// ----------------------------------------------------- 
+//
+{
+	// Power Profiles
+	"power-profiles-daemon": {
+		"format": "{icon}",
+		"tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+		"tooltip": true,
+		"format-icons": {
+			"default": "",
+			"performance": "",
+			"balanced": "",
+			"power-saver": ""
+		}
+	},
+
+	// Workspaces
+	"hyprland/workspaces" : {
+		"on-click": "activate",
+		"active-only": false,
+		"all-outputs": true,
+		"format": "{}",
+		"expand": false,
+		"format-icons": {
+			"urgent": "",
+			"active": "",
+			"default": ""
+		},
+		"persistent-workspaces": {
+			"*": 1
+		}
+	},
+
+	// Hyprland Window
+	"hyprland/window": {
+		"rewrite": {
+			"(.*) - Brave": "$1",
+			"(.*) - Chromium": "$1",
+			"(.*) - Brave Search": "$1",
+			"(.*) - Outlook": "$1",
+			"(.*) Microsoft Teams": "$1"
+		},
+		"separate-outputs": true,
+		"icon": true
+	},
+
+	// Rofi Application Launcher
+	"custom/appmenu": {
+		"format": "Apps",
+		"tooltip-format": "Left: Open the application launcher\nRight: Show all keybindings",
+		"on-click": "rofi -show drun -replace",
+		"on-click-right": "~/.config/hypr/scripts/keybindings.sh",
+		"tooltip": true
+	},
+
+	// Power Menu
+	"custom/logout": {
+		"format": "",
+		"tooltip-format": "Power Menu",
+		"on-click": "wlogout -b 5 -s",
+		"tooltip": false
+	},
+
+	// Keyboard State
+	"keyboard-state": {
+		"numlock": true,
+		"capslock": true,
+		"format": "{name} {icon} ",
+		"format-icons": {
+			"locked": "",
+			"unlocked": ""
+		}
+	},
+
+	// System tray
+	"tray": {
+		"icon-size": 24,
+		"spacing": 10
+	},
+
+	// Clock
+	"clock": {
+		"timezone": "America/Detroit",
+		"tooltip-format": "<tt><small>{calendar}</small></tt>",
+		"format": "{:%I:%M %p}",
+		"format-alt": "{:%m/%d/%y}"
+	},
+
+	// System
+	"custom/system": {
+		"format": "",
+		"tooltip": false
+	},
+
+	// CPU
+	"cpu": {
+		"format": "󰻠 {usage}%",
+		"on-click": "kitty -e btop -p 0"
+	},
+
+	// Memory
+	"memory": {
+		"format": " {}%",
+		"tooltip-format": " {used}/{total} Gb\n {swapUsed}/{swapAvail} Gb",
+		"on-click": "kitty -e btop -p 1"
+	},
+
+	// Harddisc space used
+	"disk": {
+		"interval": 30,
+		"format": "󰋊 {percentage_used}%",
+		"tooltip-format": "󰋊 {used}/{total}",
+		"path": "/",
+		"on-click": "kitty -e gdu"
+	}, 
+	
+	// GPU
+	"custom/gpu": {
+		"format": "󰾲 {}",
+		"interval": 5,
+		"exec": "~/.config/waybar/scripts/gpu-stats.sh",
+		"return-type": "json",
+		"format-icons": "󰾲",
+		"on-click": "kitty -e nvtop",
+	},
+
+
+	// Group Hardware
+	"group/hardware": {
+		"orientation": "inherit",
+		"drawer": {
+			"transition-duration": 300,
+			"children-class": "not-memory",
+			"transition-left-to-right": false
+		},        
+		"modules": [
+			"custom/system",
+			"disk",
+			"cpu",
+			"memory",
+			"custom/gpu",
+		]
+	},
+
+	// Network
+	"network": {
+		"format": "󰈁 󰖪 {ifname}",
+		"format-wifi": " {essid}",
+		"format-ethernet": "󰈁 {ifname}",
+		"format-disconnected": "Disconnected ⚠",
+		"tooltip-format": "{ifname} via {gwaddri}\n\nLeft: Open Network Manager\nRight: Toggle wifi",
+		"tooltip-format-wifi": "{ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}\n\nLeft: Open Network Manager\nRight: Toggle wifi",
+		"tooltip-format-ethernet": "IP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}\n\nLeft: Open Network Manager\nRight: Toggle wifi",
+		"tooltip-format-disconnected": "Disconnected\nLeft: Open Network Manager\nRight: Toggle wifi",
+		"max-length": 50,
+		"on-click": "nm-connection-editor",
+		"on-click-right": "~/.config/waybar/scripts/toggle-wifi.sh",
+	},
+
+	// Battery
+	"battery": {
+		"states": {
+			// "good": 95,
+			"warning": 30,
+			"critical": 15
+		},
+		"format-time": "{H}h {M}m",
+		"format": "{icon} {capacity}%",
+		"format-alt": "{icon} {time}",
+		"format-charging": " {capacity}%",
+		"format-plugged": " {capacity}%",
+		// "format-good": "", // An empty format will hide the module
+		"format-full": "{icon}",
+		"format-icons": ["󰁺", "󰁼", "󰁾", "󰂁", "󰁹"]
+	},
+
+	// Pulseaudio
+	"pulseaudio": {
+		"scroll-step": 5, // %, can be a float
+		"format": "{icon}{volume}%",
+		"format-bluetooth": "{icon}  {volume}% {format_source}",
+		"format-bluetooth-muted": "󰝟 {icon}  {format_source}",
+		"format-muted": "󰝟 {format_source}",
+		"format-source": " {volume}%",
+		"format-source-muted": "",
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": ["󰕿 ", "󰖀 ", "󰕾 "]
+		},
+		"on-click": "pavucontrol",
+		"on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+	},
+
+	// Bluetooth
+	"bluetooth": {
+		"interval": 30,
+		"on-click": "blueman-manager",
+		"on-click-right": "hyprctl dispatch exec ~/.config/waybar/scripts/toggle-bluetooth.sh",
+		"format-disabled": "󰂲",
+		"format-off": "",
+		"format-no-controller": "",
+		"format-connected-battery": " {device_alias} 󰥉 {device_battery_percentage}%",
+		"format-connected": " {device_alias}",
+		"tooltip-format": "{controller_alias}\t{controller_address}\n\nLeft: Bluetooth Manager\nRight: Toggle bluetooth",
+		"tooltip-format-connected": "Host:\n{controller_alias}\t{controller_address}\n\nConnected:\n{device_enumerate}\n\nLeft: Bluetooth Manager\nRight: Toggle bluetooth",
+		"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+		"tooltip-format-disabled": "Left: Bluetooth Manager\nRight: Toggle bluetooth",
+		"tooltip-format-off": "Left: Bluetooth Manager\nRight: Toggle bluetooth",
+		"tooltip-format-on": "Left: Bluetooth Manager\nRight: Toggle bluetooth",
+		"tooltip-format-no-controller": "⚠  NO CONTROLLER ⚠"
+	},
+
+	// Other
+	"user": {
+		"format": "{user}",
+		"interval": 60,
+		"icon": false,
+	},
+
+	// Idle Inhibator
+	"idle_inhibitor": {
+		"format": "{icon}",
+		"tooltip": true,
+		"format-icons":{
+			"activated": "",
+			"deactivated": ""
+		},
+		"on-click-right": "hyprlock"
+	}
+}

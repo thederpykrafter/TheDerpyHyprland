@@ -1,0 +1,254 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[](fg:black)\
+$os\
+[](bg:green fg:black)\
+$username$hostname\
+[](fg:green bg:black)\
+$git_branch$git_status$docker_context\
+[](fg:black bg:red)\
+(\
+[ ](bg:red)\
+$custom\
+$cmake\
+$perl\
+$python\
+$lua\
+$odin\
+$nodejs\
+$rust\
+$golang\
+$php\
+$c\
+$cpp\
+$zig\
+$ocaml\
+)\
+[](fg:red)\
+\n$directory\
+\n$sudo$character\
+"""
+
+right_format = """$cmd_duration"""
+
+[cmd_duration]
+disabled = false
+min_time = 1
+show_milliseconds = true
+style = "fg:bright-black"
+format = "[]($style)[  $duration ](bg:bright-black fg:bright-white)[]($style)"
+
+[username]
+show_always = true
+style_root = "bg:green fg:bright-white"
+style_user = "bg:green fg:black"
+format = "[ $user ]($style)"
+
+[character]
+success_symbol = "[󰇼](bold green)"
+error_symbol = "[󰇼󱢷](bold red)"
+vimcmd_symbol = "[](bold green)"
+vimcmd_replace_symbol = "[](bold bright-purple)"
+vimcmd_replace_one_symbol = "[](bold bright-purple)"
+vimcmd_visual_symbol = "[](bold yellow)"
+
+[directory]
+style = "fg:black"
+format = "[]($style)[( $read_only) $path ](bg:black fg:bright-white)[]($style)"
+read_only = " 󰌾"
+read_only_style = "red"
+truncation_length = 5
+truncate_to_repo = false
+truncation_symbol = "…/"
+home_symbol = "󰋜"
+
+[directory.substitutions]
+"/.config/" = "//"
+"/Documents/" = "/󰈙/"
+"/Downloads/" = "//"
+"/Music/" = "//"
+"/Pictures/" = "//"
+"/Dev/" = "/󰴉/"
+"/ai/" = "/󰚩/"
+"/c/" = "//"
+"/cpp/" = "//"
+"/c3c/" = "//"
+"/github/" = "/󰊤/"
+"/go/" = "//"
+"/godot/" = "//"
+"/java/" = "//"
+"/js/" = "//"
+"/lua/" = "/󰢱/"
+"/nasm/" = "//"
+"/ocaml/" = "//"
+"/odin/" = "//"
+"/python/" = "//"
+"/rust/" = "//"
+"/bash/" = "/󱆃/"
+"/zig/" = "//"
+"/nvim/" = "//"
+"/tmux/" = "//"
+"/kitty/" = "/󰄛/"
+"/starship/" = "//"
+
+[hostname]
+ssh_symbol = "󰣀"
+style = "bg:green fg:black"
+format = "[(($ssh_symbol)󰁥$hostname )]($style)"
+# uncomment to always show
+# ssh_only = false
+disabled = false
+
+[git_branch]
+symbol = ""
+style = "bg:black"
+format = '[[ $symbol $branch ](fg:bright-purple bg:black)]($style)'
+
+[git_status]
+ignore_submodules = false
+style = "bg:black"
+format = '[[($all_status$ahead_behind )](fg:bright-purple bg:black)]($style)'
+conflicted = "󰦎"
+ahead = ""
+behind = ""
+diverged = ""
+up_to_date = ""
+untracked = "󰎔"
+stashed = "󰀼"
+modified = ""
+staged = ""
+renamed = "󰑕"
+deleted = ""
+typechanged = "󱎋"
+
+[custom.sh]
+command = "echo 󱆃"
+detect_extensions = [ 'sh', 'bash', 'zsh' ]
+style = "bg:red"
+format = '[[$output ](fg:#4eaa25 bg:red)]($style)'
+
+[custom.Makefile]
+command = "echo "
+detect_files = [ 'Makefile', 'makefile' ]
+style = "bg:red"
+# #4eaa25
+format = '[[$output ](fg:#00599c bg:red)]($style)'
+
+[odin]
+symbol = ""
+style = "bg:red"
+format = '[[$symbol ](fg:#357ecc bg:red)]($style)'
+
+[perl]
+symbol = ""
+style = "bg:red"
+format = '[[$symbol ](fg:#1981aa bg:red)]($style)'
+
+[lua]
+symbol = ""
+style = "bg:red"
+format = '[[$symbol ](fg:#000080 bg:red)]($style)'
+
+[ocaml]
+symbol = ""
+style = "bg:red"
+format = '[[$symbol ](fg:#f29100 bg:red)]($style)'
+
+[nodejs]
+symbol = "󰎙"
+style = "bg:red"
+format = '[[$symbol ](fg:#3c873a bg:red)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:red"
+format = '[[$symbol ](fg:#ce412b bg:red)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:red"
+format = '[[$symbol ](fg:#00add8 bg:red)]($style)'
+
+[c]
+symbol = ""
+style = "bg:red"
+format = '[[$symbol ](fg:#00599c bg:red)]($style)'
+
+[cpp]
+symbol = ""
+style = "bg:red"
+format = '[[$symbol ](fg:#004482 bg:red)]($style)'
+
+[cmake]
+symbol = ""
+style = "bg:red"
+format = '[[$symbol ](fg:#00599c bg:red)]($style)'
+detect_files = ['CMakeLists.txt', 'CMakeCache.txt']
+
+[python]
+symbol = ""
+style = "bg:red"
+# #4584b6
+format = '[[$symbol( \($virtualenv\)) ](fg:#ffde57 bg:red)]($style)'
+
+[zig]
+symbol = ""
+style = "bg:red"
+format = '[[$symbol ](fg:#fabb33 bg:red)]($style)'
+
+[docker_context]
+symbol = ""
+style = "bg:red"
+format = '[[$symbol ](fg:#1d63ed bg:red)]($style)'
+
+[os]
+format = '[ $symbol ](bg:black fg:purple)'
+disabled = false
+
+[os.symbols]
+Alpaquita = ""
+Alpine = ""
+AlmaLinux = ""
+Amazon = ""
+Android = ""
+Arch = ""
+Artix = ""
+CachyOS = ""
+CentOS = ""
+Debian = ""
+DragonFly = ""
+Emscripten = ""
+EndeavourOS = ""
+Fedora = ""
+FreeBSD = ""
+Garuda = "󰛓"
+Gentoo = ""
+HardenedBSD = "󰞌"
+Illumos = "󰈸"
+Kali = ""
+Linux = ""
+Mabox = ""
+Macos = ""
+Manjaro = ""
+Mariner = ""
+MidnightBSD = ""
+Mint = ""
+NetBSD = ""
+NixOS = ""
+Nobara = ""
+OpenBSD = "󰈺"
+openSUSE = ""
+OracleLinux = "󰌷"
+Pop = ""
+Raspbian = ""
+Redhat = ""
+RedHatEnterprise = ""
+RockyLinux = ""
+Redox = "󰀘"
+Solus = "󰠳"
+SUSE = ""
+Ubuntu = ""
+Unknown = ""
+Void = ""
+Windows = "󰍲"

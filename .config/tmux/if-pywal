@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+
+if [[ -d /home/thederpykrafter/.cache/wal ]]; then
+	tmux set-option -gs @crytic-tmux_theme pywal
+else
+	tmux set-option -gs @crytic-tmux_theme cryptic
+fi

@@ -1,0 +1,30 @@
+{
+  "custom/terminal": {
+    "format": "󰽒 ",
+    "on-click": "footclient",
+    "on-click-right": "kitty",
+    "tooltip-format": "Left: Open Terminal\nRight: Open Floating Terminal"
+  },
+  "custom/browser": {
+    "format": "󰈹 ",
+    "on-click": "firefox",
+    "on-click-right": "firefox --private-window",
+    "tooltip-format": "Left: Open Browser\nRight: Open Private Browser"
+  },
+  "custom/filemanager": {
+    "format": " ",
+    "on-click": "thunar",
+    "on-click-right": "kitty -e gdu",
+    "tooltip-format": "Left: Open File Manager\nRight: Open Storage Analyzer"
+  },
+  "custom/quicklinkempty": {},
+  "group/quicklinks": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/browser",
+      "custom/filemanager",
+      "custom/terminal",
+      "custom/quicklinkempty"
+    ]
+  }
+}

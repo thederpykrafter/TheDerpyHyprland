@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Screw Drivers
+Comment=Play this game on Steam
+Exec=steam steam://rungameid/1279510
+Icon=steam_icon_1279510
+Terminal=false
+Type=Application
+Categories=Game;
