@@ -1,0 +1,8 @@
+home_config/.local/share/nvim
+home_config/.local/share/recently-used.xbel
+home_config/.local/state/lazygit/state.yml
+home_config/.local/state/nvim/lazy
+home_config/.local/state/nvim/shada
+home_config/.local/state/nvim/undo
+home_config/.local/state/nvim/log
+home_config/.local/state/nvim/luasnip.log
