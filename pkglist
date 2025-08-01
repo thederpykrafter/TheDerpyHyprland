@@ -12,7 +12,6 @@ cameractrls
 cliphist
 cowsay
 dkms
-dunst
 efibootmgr
 egl-wayland
 entr
@@ -89,6 +88,7 @@ ripgrep-all
 rofi-wayland
 rsync
 sddm
+sddm-silent-theme
 selectdefaultapplication-git
 shfmt
 slurp
