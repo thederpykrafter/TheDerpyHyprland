@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Game 692435241373270077
+Exec=/home/thederpykrafter/.config/dotfiles/home_config/.local/share/PrismLauncher/java/jre-legacy/bin/java %u
+Type=Application
+NoDisplay=true
+Categories=Discord;Games;
+MimeType=x-scheme-handler/discord-692435241373270077;
