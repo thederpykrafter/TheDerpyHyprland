@@ -59,7 +59,7 @@ yay -S --needed --noconfirm $(< $SRC_DIR/pkglist)
 
 _npminstall neovim
 
-# Disable autostart modules in waybar
+# Disable autostart for modules in waybar
 _noautostart blueman nm-applet
 
 ###############
@@ -67,10 +67,11 @@ _noautostart blueman nm-applet
 ###############
 
 ## Etc Configs
-ETC_CFGS=$(fd "" $SRC_DIR/etc -H --max-depth=1)
-for CFG in $ETC_CFGS; do
-  sudo cp $CFG /etc/$(echo $CFG | sed 's/.*etc\///')
-done
+rsync -a --chown=root $SRC_DIR/etc/ /etc
+# ETC_CFGS=$(fd "" $SRC_DIR/etc -H --max-depth=1)
+# for CFG in $ETC_CFGS; do
+#   sudo cp $CFG /etc/$(echo $CFG | sed 's/.*etc\///')
+# done
 
 ## Dot Config
 CFGS=$(fd "" $SRC_DIR/.config -H --max-depth=1)
@@ -91,6 +92,17 @@ for CFG in $HOME_CFGS; do
     [[ ! -d ~/.config/.bak ]] && mkdir ~/.config/.bak
     mv ~/$DEST ~/.config/.bak/
     ln -sf $CFG ~/
+  fi
+done
+
+## Local Configs
+LOCAL_CFGS=$(fd "" $SRC_DIR/local_share -H --max-depth=1)
+for CFG in $LOCAL_CFGS; do
+  DEST=$(echo $CFG | sed 's/.*local_share\///')
+  if [[ ! -L ~/.local/share/$(echo $DEST | sed 's/\/$//') ]]; then
+    [[ ! -d ~/.config/.bak ]] && mkdir ~/.config/.bak
+    mv ~/$DEST ~/.config/.bak/
+    ln -sf $CFG ~/.local/share/
   fi
 done
 
