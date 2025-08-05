@@ -138,5 +138,6 @@ sudo nbfc config --set "Acer Nitro AN515-51"
 _sys_enable bluetooth libvirtd sshd nbfc_service
 
 # dev repos
-$SRC_DIR/dev-repos.sh
-$SRC_DIR/wakatime.sh
+$SRC_DIR/scripts/dev-repos.sh
+$SRC_DIR/scripts/wakatime.sh
+$SRC_DIR/scripts/pacman-hooks.sh
