@@ -17,9 +17,10 @@
         "group/quicklinks",
         "network",
         "bluetooth",
-        "tray"
+        "tray",
     ],
     "modules-center": [
+        "custom/checkupdates",
         "hyprland/window"
     ],
     "modules-right": [

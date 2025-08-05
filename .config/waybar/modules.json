@@ -9,6 +9,19 @@
 // ----------------------------------------------------- 
 //
 {
+	// Checkupdates
+	"custom/checkupdates": {
+		"format": "{icon}{0}",
+		"return-type": "json",
+		"format-icons": {
+			"pending-updates": " ",
+			"updated": "" // hide if up to date
+		},
+		"exec-if": "which waybar-updates",
+		"exec": "waybar-updates",
+		"on-click": "kitty -e yay"
+	},
+
 	// Power Profiles
 	"power-profiles-daemon": {
 		"format": "{icon}",
@@ -152,13 +165,13 @@
 
 	// Network
 	"network": {
-		"format": "󰈁 󰖪 {ifname}",
-		"format-wifi": " {essid}",
-		"format-ethernet": "󰈁 {ifname}",
+		"format": "",
+		"format-wifi": "",
+		"format-ethernet": "󰈁",
 		"format-disconnected": "Disconnected ⚠",
 		"tooltip-format": "{ifname} via {gwaddri}\n\nLeft: Open Network Manager\nRight: Toggle wifi",
 		"tooltip-format-wifi": "{ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}\n\nLeft: Open Network Manager\nRight: Toggle wifi",
-		"tooltip-format-ethernet": "IP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}\n\nLeft: Open Network Manager\nRight: Toggle wifi",
+		"tooltip-format-ethernet": "{ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}\n\nLeft: Open Network Manager\nRight: Toggle wifi",
 		"tooltip-format-disconnected": "Disconnected\nLeft: Open Network Manager\nRight: Toggle wifi",
 		"max-length": 50,
 		"on-click": "nm-connection-editor",
