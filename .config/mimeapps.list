@@ -2,6 +2,7 @@
 inode/directory=thunar.desktop
 application/zip=xarchiver.desktop
 text/html=nvim.desktop
+x-scheme-handler/discord-692435241373270077=discord-692435241373270077.desktop
 
 [Added Associations]
 application/zip=xarchiver.desktop;
