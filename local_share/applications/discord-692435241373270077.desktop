@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Game 692435241373270077
-Exec=/home/thederpykrafter/.config/dotfiles/home_config/.local/share/PrismLauncher/java/jre-legacy/bin/java %u
+Exec=/home/thederpykrafter/.config/dotfiles/local_share/PrismLauncher/java/jre-legacy/bin/java#œ+Ô %u
 Type=Application
 NoDisplay=true
 Categories=Discord;Games;
