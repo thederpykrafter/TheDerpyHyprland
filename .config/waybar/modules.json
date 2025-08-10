@@ -19,7 +19,7 @@
 		},
 		"exec-if": "which waybar-updates",
 		"exec": "waybar-updates",
-		"on-click": "kitty -e yay"
+		"on-click": "kitty -e yay --noconfirm"
 	},
 
 	// Power Profiles
@@ -130,9 +130,10 @@
 	"disk": {
 		"interval": 30,
 		"format": "󰋊 {percentage_used}%",
-		"tooltip-format": "󰋊 {used}/{total}",
+		"tooltip-format": "󰋊 {used}/{total}\n\nLeft: Open Disk Utility\nRight: Open Disk Visualizer",
 		"path": "/",
-		"on-click": "kitty -e gdu"
+		"on-click": "kitty -e gdu ~/",
+		"on-click-right": "qdirstat ~/"
 	}, 
 	
 	// GPU
@@ -188,11 +189,11 @@
 		"format-time": "{H}h {M}m",
 		"format": "{icon} {capacity}%",
 		"format-alt": "{icon} {time}",
-		"format-charging": " {capacity}%",
-		"format-plugged": " {capacity}%",
+		"format-charging": "{icon} {capacity}%",
+		"format-plugged": "{icon} {capacity}%",
 		// "format-good": "", // An empty format will hide the module
-		"format-full": "{icon}",
-		"format-icons": ["󰁺", "󰁼", "󰁾", "󰂁", "󰁹"]
+		//"format-full": "{icon}",
+		"format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
 	},
 
 	// Pulseaudio
