@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Asciiquarium
+Exec=kitty -e asciiquarium
+Terminal=false
+Type=Application
+Keywords=Text;editor;
+Icon=
+Categories=Utility;TextEditor;
+StartupNotify=false
