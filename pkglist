@@ -116,6 +116,7 @@ qt5ct
 qt6-wayland
 qt6ct
 rclone
+reboot-arch-btw
 ripgrep-all
 rofi-wayland
 rsync
@@ -132,6 +133,7 @@ starship
 steam
 stylua
 svelte-language-server
+swww
 thunar
 thunar-archive-plugin
 tmux
