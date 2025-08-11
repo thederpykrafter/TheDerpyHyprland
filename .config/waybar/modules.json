@@ -192,12 +192,13 @@
 		"format-charging": "{icon} {capacity}%",
 		"format-plugged": "{icon} {capacity}%",
 		// "format-good": "", // An empty format will hide the module
-		//"format-full": "{icon}",
-		"format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+		"format-full": "{icon}",
+		"format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
 	},
 
 	// Pulseaudio
 	"pulseaudio": {
+		"max-volume": 100,
 		"scroll-step": 5, // %, can be a float
 		"format": "{icon}{volume}%",
 		"format-bluetooth": "{icon}  {volume}% {format_source}",
