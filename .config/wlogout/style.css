@@ -11,7 +11,7 @@ by Stephan Raabe (2024)
 */
 
 * {
-    font-family: "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-family: "Firacode Nerd Font Propo Regular", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     background-image: none;
     transition: 20ms;
     box-shadow: none;
@@ -22,7 +22,7 @@ window {
 }
 
 button {
-    background-color: rgb(50, 50, 50);
+    background-color: #212121;
     color: #FFFFFF;
     font-size:20px;
 
@@ -37,12 +37,12 @@ button {
 
 button:focus {
     background-size: 22%;
+    border: 3px solid #33CCFF;
 }
 button:active,
 button:hover {
     background-size: 30%;
     margin: 30px;
-    border: 3px solid #FFFFFF;
     border-radius: 80px;
     box-shadow: 0 0 20px #AABBCC;
     color: #FFFFFF;
