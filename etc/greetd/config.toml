@@ -8,7 +8,7 @@ vt = 1
 
 # `agreety` is the bundled agetty/login-lookalike. You can replace `/bin/sh`
 # with whatever you want started, such as `sway`.
-command = "tuigreet --cmd Hyprland --remember --greeting \"TheDerpyHyprland $(lsb_release -d | sed 's/.*://; s/\t//')\" --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=black;input=red'"
+command = "tuigreet --cmd Hyprland --time --time-format '%A, %B %d, %Y - %I:%M %p' --asterisks --remember --greeting \"TheDerpyHyprland  $(lsb_release -d | sed 's/.*://g; s/\t//g')\" --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=black;input=red'"
 
 # The user to run the command as. The privileges this user must have depends
 # on the greeter. A graphical greeter may for example require the user to be
