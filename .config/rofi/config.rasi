@@ -9,8 +9,8 @@
 */
 
 * {
-    background: rgba(0,0,1,0.5);
-    foreground: #FFFFFF;
+    background: #212121;
+    foreground: #000000;
     color0:     #0A121B;
     color1:     #056F93;
     color2:     #039AA5;
@@ -29,14 +29,14 @@
     color15:    #77e8e1;
 }
 
-* { border-width: 3px; }
+* { border-width: 2px; }
 
 /* ---- Configuration ---- */
 configuration {
-    modi:                       "drun,run";
-    font:                       "Fira Sans 11";
+    modi:                       "drun,run,window,keys";
+    font:                       "Firacode Nerd Font Propo Regular 11";
     show-icons:                 true;
-    icon-theme:                 "kora";
+    icon-theme:                 "Papirus-Dark";
     display-drun:               "APPS";
     display-run:                "RUN";
     display-filebrowser:        "FILES";
@@ -54,13 +54,13 @@ configuration {
 window {
     width:                        600px;
     x-offset:                     0px;
-    y-offset:                     65px;
+    y-offset:                     150px;
     spacing:                      0px;
     padding:                      0px;
     margin:                       0px; 
     color:                        #FFFFFF;
     border:                       @border-width;
-    border-color:                 #FFFFFF;
+    border-color:                 #212121;
     cursor:                       "default";
     transparency:                 "real";
     location:                     north;
@@ -105,7 +105,7 @@ dummy {
 /* ---- Inputbar ---- */
 inputbar {
     enabled:                      true;
-    text-color:                   @foreground;
+    text-color:                   #FFFFFF;
     spacing:                      10px;
     padding:                      15px;
     border-radius:                0px;
@@ -144,14 +144,14 @@ button {
     padding:                      10px;
     border-radius:                10px;
     background-color:             @background;
-    text-color:                   inherit;
+    text-color:                   #FFFFFF;
     cursor:                       pointer;
     border:                       0px;
 }
 
 button selected {
     background-color:             @color11;
-    text-color:                   @foreground;
+    text-color:                   #FFFFFF;
 }
 
 /* ---- Listview ---- */
@@ -186,47 +186,47 @@ element {
 
 element normal.normal {
     background-color:            inherit;
-    text-color:                  @foreground;
+    text-color:                  #FFFFFF;
 }
 
 element normal.urgent {
     background-color:            inherit;
-    text-color:                  @foreground;
+    text-color:                  #FFFFFF;
 }
 
 element normal.active {
     background-color:            inherit;
-    text-color:                  @foreground;
+    text-color:                  #FFFFFF;
 }
 
 element selected.normal {
-    background-color:            @color11;
-    text-color:                  @foreground;
+    background-color:            #2C2C2C;
+    text-color:                  #FFFFFF;
 }
 
 element selected.urgent {
     background-color:            inherit;
-    text-color:                  @foreground;
+    text-color:                  #FFFFFF;
 }
 
 element selected.active {
     background-color:            inherit;
-    text-color:                  @foreground;
+    text-color:                  #FFFFFF;
 }
 
 element alternate.normal {
     background-color:            inherit;
-    text-color:                  @foreground;
+    text-color:                  #FFFFFF;
 }
 
 element alternate.urgent {
     background-color:            inherit;
-    text-color:                  @foreground;
+    text-color:                  #FFFFFF;
 }
 
 element alternate.active {
     background-color:            inherit;
-    text-color:                  @foreground;
+    text-color:                  #FFFFFF;
 }
 
 element-icon {
@@ -238,7 +238,7 @@ element-icon {
 
 element-text {
     background-color:            transparent;
-    text-color:                  inherit;
+    text-color:                  #FFFFFF;
     cursor:                      inherit;
     vertical-align:              0.5;
     horizontal-align:            0.0;
@@ -247,6 +247,7 @@ element-text {
 /*****----- Message -----*****/
 message {
     background-color:            transparent;
+    text-color:                  #FFFFFF;
     border:0px;
     margin:20px 0px 0px 0px;
     padding:0px;
@@ -259,7 +260,7 @@ textbox {
     margin:                      0px;
     border-radius:               0px;
     background-color:            @background;
-    text-color:                  @foreground;
+    text-color:                  #FFFFFF;
     vertical-align:              0.5;
     horizontal-align:            0.0;
 }
@@ -268,5 +269,5 @@ error-message {
     padding:                     15px;
     border-radius:               20px;
     background-color:            @background;
-    text-color:                  @foreground;
+    text-color:                  #FFFFFF;
 }
