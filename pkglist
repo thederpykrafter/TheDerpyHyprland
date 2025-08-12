@@ -45,6 +45,8 @@ github-cli
 glfw
 godot
 gopls
+greetd
+greetd-tuigreet
 grim
 gst-plugin-pipewire
 gum
@@ -121,8 +123,6 @@ ripgrep-all
 rofi-wayland
 rsync
 rust-analyzer
-sddm
-sddm-silent-theme
 selectdefaultapplication-git
 shfmt
 slurp
@@ -146,6 +146,7 @@ ttf-noto-emoji-monochrome
 tumbler
 typescript-language-server
 udiskie
+unixbench
 unrar
 unzip
 uwsm
