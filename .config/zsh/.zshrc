@@ -1,5 +1,5 @@
 # !=KITTY !=TTY1 && ==STDIN && !=TMUX && ==INTERACTIVE
-if [[ $(command -v tmux) ]] && [[ $TERM != "xterm-kitty" ]] && [[ $TTY != /dev/tty1 ]] && [ -t 0 ] && [[ -z $TMUX ]] && [[ $- = *i* ]]; then
+if [[ $(command -v tmux) ]] && [[ $TERM == "foot" ]] && [[ $TTY != /dev/tty1 ]] && [ -t 0 ] && [[ -z $TMUX ]] && [[ $- = *i* ]]; then
   if tmux ls &> /dev/null; then
     exec tmux new-session
   else
