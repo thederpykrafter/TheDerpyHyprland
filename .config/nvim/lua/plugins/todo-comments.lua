@@ -1,19 +1,23 @@
 return {
   'folke/todo-comments.nvim',
   dependencies = { 'nvim-lua/plenary.nvim' },
-  config = function()
-    local keymap = vim.keymap.set
-    keymap(
-      'n',
+  opts = {},
+  lazy = false,
+  cmd = {
+    'TodoTelescope',
+    'TodoLocList',
+  },
+  keys = {
+    {
       '<leader>st',
       '<cmd>TodoTelescope<cr>',
-      { desc = '[S]earch [T]odo Telescope' }
-    )
-    keymap(
-      'n',
+      desc = '[S]earch [T]odo Telescope',
+    },
+    {
       '<leader>sl',
       '<cmd>TodoLocList<cr>',
-      { desc = '[S]earch Todo [L]ocList' }
-    )
-  end,
+      desc = '[S]earch [T]odo [L]ocList',
+    },
+  },
 }
+-- TODO:
