@@ -19,7 +19,7 @@
 		},
 		"exec-if": "which waybar-updates",
 		"exec": "waybar-updates",
-		"on-click": "kitty -e 'yay --noconfirm && read -sk1'"
+		"on-click": "~/.config/waybar/scripts/update.sh"
 	},
 
 	// Power Profiles
