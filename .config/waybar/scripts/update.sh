@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Update system
-yay
+yay --noconfirm
 
 # Read to keep open just incase of errors
 if [[ $(command -v lolcat) ]]; then
