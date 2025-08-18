@@ -56,7 +56,6 @@ htop
 hypridle
 hyprland
 hyprlock
-hyprpaper
 hyprpicker
 intel-ucode
 iwd
@@ -162,6 +161,7 @@ vulkan-validation-layers
 w3m
 waybar
 waybar-updates
+wev
 wget
 wireless_tools
 wireplumber
