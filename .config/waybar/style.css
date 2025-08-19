@@ -577,7 +577,7 @@ window#waybar.empty #window {
 /* checkupdates */
 @keyframes blink-update {
 	to {
-		background-color: dodgerblue;
+		background-color: #5f0f0e;
 	}
 }
 
