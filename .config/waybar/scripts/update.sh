@@ -1,12 +1,14 @@
 #!/bin/bash
 
-# Update system
-yay --noconfirm
+if [[ $(command -v figlet) ]] && [[ $(command -v lolcat) ]]; then
+  echo "yay -Syu" | figlet | lolcat
+  yay --noconfirm
 
-# Read to keep open just incase of errors
-if [[ $(command -v lolcat) ]]; then
-  echo -n "Press any key to continue..." | lolcat
+  echo -n "Press any key to continue..." | figlet | lolcat
   read -n 1
 else
+  echo "yay -Syu"
+  yay --noconfirm
+
   read -p "Press any key to continue..." -n 1
 fi
