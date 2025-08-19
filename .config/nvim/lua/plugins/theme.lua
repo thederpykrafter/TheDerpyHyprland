@@ -10,13 +10,18 @@ local tokyodark = {
       functions = {}, -- style for functions
       variables = {}, -- style for variables
     },
+    ---@diagnostic disable-next-line: unused-local
     custom_highlights = {} or function(highlights, palette) return {} end, -- extend highlights
+    ---@diagnostic disable-next-line: unused-local
     custom_palette = {} or function(palette) return {} end, -- extend palette
     terminal_colors = true, -- enable terminal colors
   },
   config = function(_, opts)
     require('tokyodark').setup(opts) -- calling setup is optional
+    require('markview.extras.checkboxes').setup()
     vim.cmd [[colorscheme tokyodark]]
+    vim.cmd('highlight MarkviewCode guibg=#11121D')
+    vim.cmd('highlight MarkviewInlineCode guibg=#11121D')
   end,
 }
 
@@ -27,18 +32,4 @@ local pywal = {
   config = function() vim.cmd.colorscheme('pywal16') end,
 }
 
-local function file_exists(name)
-  local f = io.open(name, 'r')
-  if f ~= nil then
-    io.close(f)
-    return true
-  else
-    return false
-  end
-end
-
-if not file_exists('/home/thederpykrafter/.cache/wal') then
-  return tokyodark
-else
-  return { pywal }
-end
+return tokyodark
