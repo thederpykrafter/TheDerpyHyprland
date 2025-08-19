@@ -17,6 +17,7 @@
         "group/quicklinks",
         "network",
         "bluetooth",
+        "pulseaudio",
         "tray",
     ],
     "modules-center": [
@@ -25,13 +26,12 @@
     ],
     "modules-right": [
         "group/hardware",
-        "mpd",
-        "pulseaudio",
         "battery",
         "keyboard-state",
         "power-profiles-daemon",
         "idle_inhibitor",
         "custom/logout",
-        "clock"
+        "clock",
+        "custom/notification"
     ]
 }
