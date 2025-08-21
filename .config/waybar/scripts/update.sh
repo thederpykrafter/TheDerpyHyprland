@@ -1,10 +1,10 @@
 #!/bin/bash
 
-if [[ $(command -v figlet) ]] && [[ $(command -v lolcat) ]]; then
-  echo "yay -Syu" | figlet | lolcat
+if [[ $(command -v toilet) ]] && [[ $(command -v lolcat) ]]; then
+  toilet -f future "yay -Syu" | lolcat
   yay --noconfirm
 
-  echo -n "Press any key to continue..." | figlet | lolcat
+  toilet -f future "Press any key to continue..." | lolcat
   read -n 1
 else
   echo "yay -Syu"
