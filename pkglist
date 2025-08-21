@@ -17,6 +17,7 @@ c3c
 cameractrls
 catimg
 cbonsai
+chrono-date
 cliphist
 cowsay
 delve
@@ -43,6 +44,7 @@ gimp
 git
 github-cli
 glfw
+glib2-devel
 godot
 gopls
 greetd
@@ -78,6 +80,7 @@ love
 lsd
 lua-language-server
 mako
+meson
 mpv
 nano
 nano-syntax-highlighting
@@ -132,6 +135,7 @@ starship
 steam
 stylua
 svelte-language-server
+swaync
 swww
 thunar
 thunar-archive-plugin
