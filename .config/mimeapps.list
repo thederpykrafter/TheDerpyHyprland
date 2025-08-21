@@ -1,12 +1,15 @@
 [Default Applications]
 inode/directory=thunar.desktop
-application/zip=xarchiver.desktop
 text/html=nvim.desktop
 x-scheme-handler/discord-692435241373270077=discord-692435241373270077.desktop
+x-scheme-handler/discord-505751038989434881=discord-505751038989434881.desktop
+application/zip=xarchiver.desktop
+application/x-shellscript=nvim.desktop
 
 [Added Associations]
-application/zip=xarchiver.desktop;
 text/plain=nvim.desktop;
 text/html=nvim.desktop;
 image/jpeg=gimp.desktop;
 image/png=gimp.desktop;
+application/zip=xarchiver.desktop;
+application/x-shellscript=nvim.desktop;
