@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=The Planet Crafter
+Comment=Play this game on Steam
+Exec=steam steam://rungameid/1284190
+Icon=steam_icon_1284190
+Terminal=false
+Type=Application
+Categories=Game;

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=CARRION
+Comment=Play this game on Steam
+Exec=steam steam://rungameid/953490
+Icon=steam_icon_953490
+Terminal=false
+Type=Application
+Categories=Game;

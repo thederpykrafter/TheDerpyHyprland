@@ -48,6 +48,7 @@ glfw
 glib2-devel
 godot
 gopls
+goxel
 greetd
 greetd-tuigreet
 grim
@@ -60,6 +61,7 @@ hypridle
 hyprland
 hyprlock
 hyprpicker
+hyprpolkitagent
 intel-ucode
 iwd
 jp2a
@@ -80,7 +82,8 @@ lolcat
 love
 lsd
 lua-language-server
-mako
+man-db
+man-pages
 meson
 mpv
 nano
@@ -109,7 +112,6 @@ pipewire
 pipewire-alsa
 pipewire-jack
 pipewire-pulse
-polkit-kde-agent
 power-profiles-daemon
 prismlauncher
 pyright
@@ -122,6 +124,7 @@ qt6-wayland
 qt6ct
 rclone
 reboot-arch-btw
+reflector
 ripgrep-all
 rofi-wayland
 rsync
@@ -138,6 +141,7 @@ stylua
 svelte-language-server
 swaync
 swww
+systemd-pilot
 thunar
 thunar-archive-plugin
 tmux
