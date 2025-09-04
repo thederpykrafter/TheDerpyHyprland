@@ -167,6 +167,8 @@ window#waybar.empty #window {
 #custom-filemanager,
 #custom-teams,
 #custom-terminal,
+#custom-prismlauncher,
+#custom-minecraft,
 #custom-chatgpt,
 #custom-calculator,
 #custom-windowsvm,
@@ -196,6 +198,8 @@ window#waybar.empty #window {
 }
 
 #custom-terminal,
+#custom-prismlauncher,
+#custom-minecraft,
 #custom-browser,
 #custom-filemanager {
     margin-right: 5px;

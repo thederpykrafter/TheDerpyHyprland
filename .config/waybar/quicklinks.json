@@ -17,6 +17,18 @@
     "on-click-right": "kitty -e gdu",
     "tooltip-format": "Left: Open File Manager\nRight: Open Storage Analyzer"
   },
+  "custom/prismlauncher": {
+    "format": "󰍳 ",
+    "on-click": "prismlauncher",
+    "on-click-middle": "~/Dev/bash/killmc/killmc.sh",
+    "tooltip-format": "Left: Open PrismLauncher\nMiddle: Kill Minecraft instance"
+  },
+  "custom/minecraft": {
+    "format": "󰍳 ",
+    "on-click": "minecraft",
+    "on-click-middle": "~/Dev/bash/killmc/killmc.sh",
+    "tooltip-format": "Left: Open PrismLauncher\nMiddle: Kill Minecraft instance"
+  },
   "custom/quicklinkempty": {},
   "group/quicklinks": {
     "orientation": "horizontal",
@@ -24,6 +36,7 @@
       "custom/browser",
       "custom/filemanager",
       "custom/terminal",
+			"custom/prismlauncher",
       "custom/quicklinkempty"
     ]
   }
