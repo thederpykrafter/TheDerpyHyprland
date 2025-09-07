@@ -1,3 +1,5 @@
+alias rab=$(cat /etc/pacman.d/hooks/99-reboot-arch-btw.hook | tail -n1 | sed 's/.*bin\///')
+
 function update() {
   function update_os() {
     if command -v nala &> /dev/null; then
