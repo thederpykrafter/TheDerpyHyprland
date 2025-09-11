@@ -1,4 +1,5 @@
 arc-icon-theme
+arch-install-scripts
 arduino-ide-bin
 arduino-language-server
 asciiquarium-transparent-git
@@ -127,7 +128,7 @@ rclone
 reboot-arch-btw
 reflector
 ripgrep-all
-rofi-wayland
+rofi
 rsync
 rust-analyzer
 selectdefaultapplication-git
