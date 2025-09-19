@@ -15,7 +15,7 @@ _checkpkg() {
 _installyay() {
   checkpkg git base-devel
   TEMP_DIR=$(mktemp -d)
-  git clone https://aur.archlinux.org/yay.git $TEMP_DIR/yay
+  git clone https://aur.archlinux.org/yay-bin.git $TEMP_DIR/yay
   cd $TEMP_DIR/yay
   makepkg -si
   cd -
