@@ -80,7 +80,7 @@ for CFG in $CFGS; do
   if [[ ! -L ~/$(echo $DEST | sed 's/\/$//') ]]; then
     [[ ! -d ~/.config/.bak ]] && mkdir ~/.config/.bak
     mv ~/$DEST ~/.config/.bak/
-    ln -sf $CFG ~/.config/
+    ln -sfT $CFG ~/.config/
   fi
 done
 
@@ -91,7 +91,7 @@ for CFG in $HOME_CFGS; do
   if [[ ! -L ~/$(echo $DEST | sed 's/\/$//') ]]; then
     [[ ! -d ~/.config/.bak ]] && mkdir ~/.config/.bak
     mv ~/$DEST ~/.config/.bak/
-    ln -sf $CFG ~/
+    ln -sfT $CFG ~/
   fi
 done
 
