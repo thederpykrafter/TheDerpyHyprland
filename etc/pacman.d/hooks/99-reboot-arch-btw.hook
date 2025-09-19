@@ -1,0 +1,11 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Type = Package
+Target = *
+
+[Action]
+Description = Check whether a reboot is required
+When = PostTransaction
+Exec = /usr/bin/sudo -u thederpykrafter DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus /usr/bin/reboot-arch-btw --notification-timeout 0 --session-restart-packages xorg-server,xorg-xwayland,hyprland,swww,waybar --reboot-packages nvidia-open-dkms,libva-nvidia-driver,nvidia-settings,nvidia-utils,greetd,greetd-tuigreet,nbfc-linux,systemd,linux-firmware,intel-ucode
