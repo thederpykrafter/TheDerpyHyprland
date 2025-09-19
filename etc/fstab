@@ -1,0 +1,21 @@
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# <file system> <dir> <type> <options> <dump> <pass>
+# /dev/nvme0n1p2
+UUID=ffe155de-5522-4ce5-af8c-26d27b86938c	/         	btrfs     	rw,relatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@	0 0
+
+# /dev/nvme0n1p2
+UUID=ffe155de-5522-4ce5-af8c-26d27b86938c	/home     	btrfs     	rw,relatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@home	0 0
+
+# /dev/nvme0n1p2
+UUID=ffe155de-5522-4ce5-af8c-26d27b86938c	/var/cache/pacman/pkg	btrfs     	rw,relatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@pkg	0 0
+
+# /dev/nvme0n1p2
+UUID=ffe155de-5522-4ce5-af8c-26d27b86938c	/var/log  	btrfs     	rw,relatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@log	0 0
+
+# /dev/nvme0n1p1
+UUID=9B67-64B6      	/boot     	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
+
+# /dev/nvme1n1
+UUID=f373ec2f-e49f-4ea4-83d7-30a8555d8b94       /home/thederpykrafter/BULK      ext4            defaults     0 2
