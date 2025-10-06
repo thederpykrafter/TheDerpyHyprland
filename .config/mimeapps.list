@@ -6,6 +6,7 @@ application/zip=xarchiver.desktop
 application/x-shellscript=nvim.desktop
 x-scheme-handler/discord-692435241373270077=discord-692435241373270077.desktop
 x-scheme-handler/discord-712264497787568171=discord-712264497787568171.desktop
+x-scheme-handler/discord-696343075731144724=discord-696343075731144724.desktop
 
 [Added Associations]
 text/plain=nvim.desktop;
