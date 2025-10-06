@@ -137,6 +137,9 @@ fi
 sudo nbfc config --set "Acer Nitro AN515-51"
 _sys_enable bluetooth libvirtd sshd nbfc_service
 
+BOOT_ENTRY=$(fd "" /boot/loader/entries | tail -n1)
+grep "quiet splash" $BOOT_ENTRY || sudo echo "quiet splash" >> $BOOT_ENTRY > /dev/null
+
 # dev repos
 $SRC_DIR/scripts/dev-repos.sh
 $SRC_DIR/scripts/wakatime.sh
