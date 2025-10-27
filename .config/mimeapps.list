@@ -15,3 +15,4 @@ image/jpeg=gimp.desktop;
 image/png=gimp.desktop;
 application/zip=xarchiver.desktop;
 application/x-shellscript=nvim.desktop;
+application/json=nvim.desktop;
