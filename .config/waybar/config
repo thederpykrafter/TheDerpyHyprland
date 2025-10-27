@@ -15,7 +15,6 @@
         "custom/appmenu",
         "hyprland/workspaces",
         "group/quicklinks",
-        "network",
         "bluetooth",
         "pulseaudio",
         "tray",
@@ -26,6 +25,7 @@
     ],
     "modules-right": [
         "group/hardware",
+        "network",
         "battery",
         "keyboard-state",
         "power-profiles-daemon",

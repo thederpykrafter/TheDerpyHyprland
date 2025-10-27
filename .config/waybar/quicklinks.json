@@ -29,6 +29,11 @@
     "on-click-middle": "~/Dev/bash/killmc/killmc.sh",
     "tooltip-format": "Left: Open PrismLauncher\nMiddle: Kill Minecraft instance"
   },
+  "custom/vintagestory": {
+    "format": "󰻝 ",
+    "on-click": "vintagestory",
+    "tooltip-format": "Left: Open Vintage Story"
+  },
   "custom/quicklinkempty": {},
   "group/quicklinks": {
     "orientation": "horizontal",
@@ -37,6 +42,7 @@
       "custom/filemanager",
       "custom/terminal",
 			"custom/prismlauncher",
+			"custom/vintagestory",
       "custom/quicklinkempty"
     ]
   }
