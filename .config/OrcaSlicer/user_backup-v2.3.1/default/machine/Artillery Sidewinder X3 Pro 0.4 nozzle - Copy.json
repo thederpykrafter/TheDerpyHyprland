@@ -1,0 +1,10 @@
+{
+    "from": "User",
+    "inherits": "Artillery Sidewinder X3 Pro 0.4 nozzle",
+    "is_custom_defined": "0",
+    "machine_start_gcode": "M140 S60\nM104 S140\nM190 S[first_layer_bed_temperature]\nM109 S{temperature_vitrification[0]}\nG12 C2 ; wipe nozzle\nG92 E0 ; reset extruder\nG28 Z ; home z\nG1 Z1.0 F3000 ; move z up little to prevent scratching of surface\nG28 ; home all axis\nM140 S[first_layer_bed_temperature];\nM104 S[first_layer_temperature];",
+    "name": "Artillery Sidewinder X3 Pro 0.4 nozzle - Copy",
+    "printer_settings_id": "Artillery Sidewinder X3 Pro 0.4 nozzle - Copy",
+    "time_cost": "10",
+    "version": "2.2.0.4"
+}
