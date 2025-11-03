@@ -137,6 +137,7 @@ fi
 sudo nbfc config --set "Acer Nitro AN515-51"
 _sys_enable bluetooth libvirtd sshd nbfc_service
 
+# hide systemd output to fix tuigreet issue
 BOOT_ENTRY=$(fd "" /boot/loader/entries | tail -n1)
 grep "quiet splash" $BOOT_ENTRY || sudo echo "quiet splash" >> $BOOT_ENTRY > /dev/null
 
