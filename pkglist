@@ -12,6 +12,7 @@ bibata-cursor-theme
 blender
 blueman
 bluez
+bluez-utils
 brightnessctl
 btop
 c3c
@@ -48,7 +49,7 @@ git
 github-cli
 glfw
 glib2-devel
-godot
+godot-mono
 gopls
 goxel
 greetd
@@ -66,14 +67,16 @@ hyprpicker
 hyprpolkitagent
 intel-ucode
 iwd
+jdk17-openjdk
+jdk21-openjdk
+jdk8-openjdk
+joplin-bin
 jp2a
 jq
-jre17-openjdk
-jre21-openjdk
-jre8-openjdk
 kitty
 lazygit
 less
+lib32-nvidia-utils
 libpulse
 libva-nvidia-driver
 linux
@@ -131,6 +134,10 @@ ripgrep-all
 rofi
 rsync
 rust-analyzer
+sdl3-git
+sdl3_image-git
+sdl3_sound-git
+sdl3_ttf-git
 selectdefaultapplication-git
 shfmt
 slurp
@@ -139,11 +146,12 @@ sof-firmware
 spirv-headers
 starship
 steam
+steam-native-runtime
 stylua
 svelte-language-server
 swaync
 swww
-systemd-pilot
+sysd-manager
 thunar
 thunar-archive-plugin
 tmux
@@ -161,6 +169,7 @@ unrar
 unzip
 uwsm
 vim
+vintagestory
 virt-manager
 volk
 vulkan-extra-layers
@@ -178,6 +187,7 @@ wireless_tools
 wireplumber
 wl-clipboard
 wlogout
+wlr-randr
 woff2-font-awesome
 wpa_supplicant
 xarchiver
