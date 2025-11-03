@@ -143,4 +143,3 @@ grep "quiet splash" $BOOT_ENTRY || sudo echo "quiet splash" >> $BOOT_ENTRY > /de
 # dev repos
 $SRC_DIR/scripts/dev-repos.sh
 $SRC_DIR/scripts/wakatime.sh
-$SRC_DIR/scripts/pacman-hooks.sh
